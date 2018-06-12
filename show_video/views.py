@@ -17,6 +17,8 @@ def test(req):
 #进入开始界面
 def init(req):
 	if req.method == 'POST':
+		result = Users.objects.filter(username='administrator')
+		print(result[0].password)
 		if True:
 			return HttpResponseRedirect('/list/')
 	else:

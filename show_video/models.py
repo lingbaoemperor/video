@@ -12,7 +12,7 @@ class Video(models.Model):
 	#title = models.CharField(max_length=100)
 	size = models.BigIntegerField()
 	date = models.DateTimeField()
-	file = models.FileField(upload_to='sql_save/',default='unknown')
+	file = models.FileField(upload_to='img/',default='unknown')
 
 class User_Video(models.Model):
 	username = models.ForeignKey(Users,on_delete=models.CASCADE)
