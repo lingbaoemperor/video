@@ -4,3 +4,4 @@ video/__pycache__/
 media/img/
 user/__pycache__/
 mylog.log
+user/migrations/__pycache__/
