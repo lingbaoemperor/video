@@ -1,4 +1,0 @@
-<html>
-	<p>video列表</p>
-	<input type='button' value='上传' onclick="window.location.href='switch_to_upload/'" />
-</html>
