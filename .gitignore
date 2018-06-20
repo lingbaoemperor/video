@@ -1,0 +1,6 @@
+show_video/__pycache__/
+show_video/migrations/__pycache__/
+video/__pycache__/
+media/img/
+user/__pycache__/
+mylog.log

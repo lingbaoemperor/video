@@ -5,9 +5,9 @@
 	<title>插入视频</title>
 	<body>
 		<video autoplay="autoplay" controls="controls">
-		<source src="{{ MEDIA_URL }}{{ "img/222.mp4" }}" type="video/mp4"></source>
-		<source src="{{ MEDIA_URL }}{{ "img/222.webm" }}" type="video/webm"></source>
-		<source src="{{ MEDIA_URL }}{{ "img/222.Ogg" }}" type="video/ogg"></source>
+		<source src="{{ MEDIA_URL }}{{ video_name }}{{ ".mp4" }}" type="video/mp4"></source>
+		<source src="{{ MEDIA_URL }}{{ video_name }}{{ ".webm" }}" type="video/webm"></source>
+		<source src="{{ MEDIA_URL }}{{ video_name }}{{ ".Ogg" }}" type="video/ogg"></source>
 		
 		</video>
 	</body>

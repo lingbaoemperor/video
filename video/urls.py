@@ -14,22 +14,30 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from show_video import views
+from django.urls import path,re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
+from show_video import views as video_views
+from user import views as user_views
+from django.views.static import serve
+from video.settings import MEDIA_ROOT
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', views.init),
-    path('list/', views.list_page),
-    path('list/switch_to_upload/', views.switch_to_upload),
-    path('upload/', views.upload),
-    path('list/play/', views.play),
-#	url(r'^login/$',views.init),
-#	url(r'^check/$',views.check),
-#	url(r'^list_page/$',views.list_page),
+    path('login/', user_views.init),
+    path('list/',  user_views.list_page),
+    path('register/', user_views.register),
+   
+    path('video/', user_views.video),
+    path('novel/',user_views.novel),
+
+    path('upload/', video_views.upload),
+    path('video/play/<int:video>/',video_views.play),
+   #？字符串传参，视图函数用get获取
+   # re_path(r'^play/(?P<video>[\w]+)/$',video_views.play),
+
+    path('media/<path:path>',serve,{'document_root':MEDIA_ROOT}),
 ]
 #链接访问图片
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

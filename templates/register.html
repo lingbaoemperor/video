@@ -1,0 +1,10 @@
+<html>
+<body>
+	<form method="POST" name="register" action="/register/">
+		{% csrf_token %}
+		{{uf.as_p}}
+		<input type="submit" value="提交" />
+		<input type="button" onclick="location.href='login/'" value="返回登录" />
+	</form>
+</body>
+</html>

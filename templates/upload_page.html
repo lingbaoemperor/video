@@ -5,5 +5,8 @@
 	{{uf.as_p}}
        <input type="submit" value="upload">
 </form>
+{% if error %}
+	<p>{{ error }}</p>
+{% endif %}
 </body>
 </html>
