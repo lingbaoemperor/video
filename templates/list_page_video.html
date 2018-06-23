@@ -20,6 +20,18 @@
 			</td>
 		<tr>
 	</table>
+	<table>
+		{% if queryset %}
+			{% for item in queryset %}
+				<tr>
+					<td><a href="/video/play/{{ item.v_id }}/">{{ item.name }}</a></td>
+					<td>{{ item.date  }}</td>
+					<td>{{ item.size }}</td>
+					<td><a href="/delete_video/{{ item.v_id }}">删除</a></td>
+				</tr>
+			{% endfor %}
+		{% endif %}
+	</table>
 <script>
 	function submit_video(){
 		document.forms[0].submit()

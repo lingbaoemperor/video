@@ -50,8 +50,7 @@ def register(req):
 		#如果主键和已有数据重复这个条件就不成立
 		if uf.is_valid():
 			new_user = uf.save()
-			uf = LoginForm()
-			return render(req,'login.html',{'uf':uf})
+			return HttpResponseRedirect('/login/')
 		return HttpResponse('<html>用户名已存在！！！</html>')
 	uf = RegisterForm()
 	return render(req,'register.html',{'uf':uf})
@@ -60,16 +59,16 @@ def register(req):
 def video(req):
 	if isOnline(req) == False:
 		return HttpResponseRedirect('/login/')
-	if req.method == 'POST':
-		result = Video.objects.all()
-		#print(result)
-		querylist = list()
-		#转成列表传到前台
-		for item in result:
-			a = {'name':item.file,'date':item.date,'size':item.size,'v_id':item.v_id}
-			querylist.append(a)
-		return render(req,'list_page.html',{'queryset':querylist})
-	return render(req,'list_page.html')
+	#if req.method == 'POST':
+	result = Video.objects.all()
+	#print(result)
+	querylist = list()
+	#转成列表传到前台
+	for item in result:
+		a = {'name':item.file,'date':item.date,'size':item.size,'v_id':item.v_id}
+		querylist.append(a)
+	return render(req,'list_page_video.html',{'queryset':querylist})
+	#return render(req,'list_page.html')
 
 def novel(req):
-	return render(req,'list_page.html')
+	return render(req,'list_page_novel.html')

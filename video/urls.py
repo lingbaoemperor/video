@@ -33,11 +33,13 @@ urlpatterns = [
     path('novel/',user_views.novel),
 
     path('upload/', video_views.upload),
+   #参数传递一
     path('video/play/<int:video>/',video_views.play),
-   #？字符串传参，视图函数用get获取
+    path('delete_video/<int:id>/',video_views.delete),
+   #参数传递二？字符串传参，视图函数用get获取
    # re_path(r'^play/(?P<video>[\w]+)/$',video_views.play),
-
+   #链接访问资源
     path('media/<path:path>',serve,{'document_root':MEDIA_ROOT}),
 ]
-#链接访问图片
+#链接访问资源
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
