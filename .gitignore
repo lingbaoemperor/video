@@ -5,3 +5,4 @@ media/img/
 user/__pycache__/
 mylog.log
 user/migrations/__pycache__/
+static/

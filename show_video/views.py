@@ -36,7 +36,7 @@ def upload(req):
 			print(username)
 			if len(fname) == 2:
 				#视频
-				if fname[1] in ['webm','mp4','ogg']:
+				if fname[1] in ['webm','mp4','ogg','png','css','jpg']:
 					#print(fname[1])
 					video = Video()
 					video.size = myfile.size

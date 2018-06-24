@@ -121,6 +121,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+#收集静态文件的目录
+STATIC_ROOT = '/home/ubuntu/video/static/'
+STATICFILES_DIRS = [
+	("user","/home/ubuntu/video/user/static/"),
+	("main","/home/ubuntu/video/show_video/static/"),
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'

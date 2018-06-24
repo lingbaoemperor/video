@@ -29,6 +29,7 @@ def init(req):
 		if uf.is_valid():
 			un = uf.cleaned_data['username']
 			pw = uf.cleaned_data['password']
+			print(un,pw)
 			result = Users.objects.filter(username=un,password=pw)
 			if result:
 				req.session['username'] = un

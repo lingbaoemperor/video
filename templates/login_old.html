@@ -1,0 +1,6 @@
+<form method ="POST" name="check">
+	{% csrf_token %}
+	{{uf.as_p}}
+	<input type="submit" value="提交" />
+	<input type="button" onclick="location.href='/register/'"  value="注册" />
+</form>
