@@ -75,11 +75,3 @@ def delete(req,id):
 	os.remove(BASE_DIR+'/media/'+path)
 	return HttpResponseRedirect('/video/')
 
-def play_test(req):
-	if isOnline(req) == False:
-		return HttpResponseRedirect('/login/')
-	if req.method == "POST":
-		if 'video_name' not in req.POST.keys():
-			print('aaa!!!')
-		vn = req.POST['video_name']
-		return render(req,'play_video.html',{'video_name':vn})

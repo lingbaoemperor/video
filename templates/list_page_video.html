@@ -1,29 +1,24 @@
 <html>
 <body>
-	<p>video列表</p>
-	<table>
-		<tr>
+<div width="100%" height="100%">
+	<table width="100%" height="10%" align="center">
+		<caption>视频列表</caption>
+		<tr width="100%">
 			<td>
 			<a href="/upload/">上传</a>
 			</td>
 			<td>
-				<form method="POST" action="/video/" name="video">
-					{% csrf_token %}
-					<a href="javascript:submit_video()">视频</a>
-				</form>
+				<a href="/video/">视频</a>
 			</td>
 			<td>
-				<form method="POST" action="/novel/" name="novel">
-					{% csrf_token %}
-					<a href="javascript:submit_novel()">小说</a>
-				</form>
+				<a href="/novel/">小说</a>
 			</td>
-		<tr>
+		</tr>
 	</table>
-	<table>
+	<table width="100%" height="90%">
 		{% if queryset %}
 			{% for item in queryset %}
-				<tr>
+				<tr  width="100%">
 					<td><a href="/video/play/{{ item.v_id }}/">{{ item.name }}</a></td>
 					<td>{{ item.date  }}</td>
 					<td>{{ item.size }}</td>
@@ -32,6 +27,7 @@
 			{% endfor %}
 		{% endif %}
 	</table>
+</div>
 <script>
 	function submit_video(){
 		document.forms[0].submit()
